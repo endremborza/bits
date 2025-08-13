@@ -1,1 +1,0 @@
-import"../chunks/CWj6FrbW.js";import"../chunks/BPtPTX2S.js";import{z as a,A as s,B as e}from"../chunks/18rAapEI.js";var p=a('<h1>Bits</h1> <svg viewBox="0 0 100 100" class="svelte-1uj8coq"><path d="M 20 80 Q 50 93 70 80 Q 78 50 47 20 Q 47 60 20 80 z" class="svelte-1uj8coq"></path></svg>',1);function v(t){var o=p();e(2),s(t,o)}export{v as component};
