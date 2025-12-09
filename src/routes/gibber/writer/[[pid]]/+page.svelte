@@ -5,7 +5,7 @@
 	import { onMount } from 'svelte';
 	import { afterNavigate, goto } from '$app/navigation';
 	import { base } from '$app/paths';
-	import { DB_HOST, getRng } from '$lib/common';
+	import { GIBBER_DB_HOST as GIBBER_DB_HOST, getRng } from '$lib/common';
 
 	function submit() {
 		let ps = currentPhrase.split(', ');
@@ -28,7 +28,7 @@
 			pid,
 			sid: Math.floor(Math.random() * Math.pow(2, 60))
 		};
-		fetch(DB_HOST + 'v1', {
+		fetch(GIBBER_DB_HOST + 'v1', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -48,7 +48,7 @@
 	}
 
 	function reset() {
-		fetch(`${DB_HOST}v1-past?pid=${pid}`, {
+		fetch(`${GIBBER_DB_HOST}v1-past?pid=${pid}`, {
 			headers: {
 				'ngrok-skip-browser-warning': '1'
 			}

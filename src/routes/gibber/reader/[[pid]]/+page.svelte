@@ -1,10 +1,10 @@
 <script lang="ts">
 	import basis from '$lib/assets/id-basis.json';
-	import {page} from '$app/stores';
-	import {onMount} from 'svelte';
-	import {afterNavigate, goto} from '$app/navigation';
-	import {base} from '$app/paths';
-	import {DB_HOST, getRng} from '$lib/common';
+	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
+	import { afterNavigate, goto } from '$app/navigation';
+	import { base } from '$app/paths';
+	import { GIBBER_DB_HOST, getRng } from '$lib/common';
 
 	function submit(value: number) {
 		if (currentPhrase != '') {
@@ -16,7 +16,7 @@
 				sid: phraseId,
 				res: value
 			};
-			fetch(DB_HOST + 'v1-review', {
+			fetch(GIBBER_DB_HOST + 'v1-review', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -30,7 +30,7 @@
 	}
 
 	function refresh() {
-		fetch(`${DB_HOST}v1?rid=${pid}`, {
+		fetch(`${GIBBER_DB_HOST}v1?rid=${pid}`, {
 			headers: {
 				'ngrok-skip-browser-warning': '1'
 			}
@@ -78,16 +78,16 @@
 </script>
 
 {#if pid != undefined}
-<h1>Hello Reviewer {name}</h1>
-<p>Evaluate the following</p>
-<div id="res">
-	<p>{currentPhrase}</p>
-</div>
-<hr />
-<div class="row">
-	<button id="bull" on:click={()=> submit(0)}>Bullshit</button>
-	<button id="ok" on:click={()=> submit(1)}>True</button>
-</div>
+	<h1>Hello Reviewer {name}</h1>
+	<p>Evaluate the following</p>
+	<div id="res">
+		<p>{currentPhrase}</p>
+	</div>
+	<hr />
+	<div class="row">
+		<button id="bull" on:click={() => submit(0)}>Bullshit</button>
+		<button id="ok" on:click={() => submit(1)}>True</button>
+	</div>
 {/if}
 
 <style>

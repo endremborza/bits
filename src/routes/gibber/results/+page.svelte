@@ -1,6 +1,6 @@
 <script lang="ts">
-	import {DB_HOST} from '$lib/common';
-	import {onMount} from 'svelte';
+	import { GIBBER_DB_HOST } from '$lib/common';
+	import { onMount } from 'svelte';
 
 	let res = [];
 
@@ -8,7 +8,7 @@
 	let includeRevs = {};
 
 	function refresh() {
-		fetch(`${DB_HOST}v1-results`, {
+		fetch(`${GIBBER_DB_HOST}v1-results`, {
 			headers: {
 				'ngrok-skip-browser-warning': '1'
 			}
@@ -36,7 +36,7 @@
 				vlist.map((v) => {
 					let pid = v.name;
 					if (!Object.keys(out).includes(pid)) {
-						out[pid] = {0: {0: 0, 1: 0}, 1: {0: 0, 1: 0}};
+						out[pid] = { 0: { 0: 0, 1: 0 }, 1: { 0: 0, 1: 0 } };
 					}
 					out[pid][v.res][v.prompt_val == 'Bullshit' ? 0 : 1] += 1;
 				});
@@ -56,32 +56,32 @@
 <div class="row">
 	<ul>
 		{#each Object.keys(reviewers) as rev}
-		<li><input type="checkbox" bind:checked={includeRevs[rev]} />{rev}</li>
+			<li><input type="checkbox" bind:checked={includeRevs[rev]} />{rev}</li>
 		{/each}
 	</ul>
 </div>
 
 {#each Object.entries(revSum) as [k, o]}
-<h3>{k}</h3>
-<div class="row">
-	<table>
-		<tr>
-			<th></th>
-			<th>Intended as Bullshit</th>
-			<th>Intended as True</th>
-		</tr>
-		<tr>
-			<td>Reviewed as Bullshit</td>
-			<td>{o[0][0]} </td>
-			<td>{o[0][1]} </td>
-		</tr>
-		<tr>
-			<td>Reviewed as True</td>
-			<td>{o[1][0]} </td>
-			<td>{o[1][1]} </td>
-		</tr>
-	</table>
-</div>
+	<h3>{k}</h3>
+	<div class="row">
+		<table>
+			<tr>
+				<th></th>
+				<th>Intended as Bullshit</th>
+				<th>Intended as True</th>
+			</tr>
+			<tr>
+				<td>Reviewed as Bullshit</td>
+				<td>{o[0][0]} </td>
+				<td>{o[0][1]} </td>
+			</tr>
+			<tr>
+				<td>Reviewed as True</td>
+				<td>{o[1][0]} </td>
+				<td>{o[1][1]} </td>
+			</tr>
+		</table>
+	</div>
 {/each}
 
 <style>
