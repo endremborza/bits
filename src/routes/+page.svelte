@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	let d = 'M 20 80 Q 50 93 70 80 Q 78 50 47 20 Q 47 60 20 80 z';
 	let svgEl: SVGSVGElement;
 
@@ -130,13 +131,18 @@
 <div class="container">
 	<div class="content padded">
 		<h1>Bits</h1>
+		<ul>
+			<li><a href={resolve('/movies')}>Movies</a></li>
+			<li><a href={resolve('/pl-fixtures')}>PL Fixtures</a></li>
+			<li><a href={resolve('/box')}>Box</a></li>
+		</ul>
 
 		<svg viewBox="0 0 100 100" bind:this={svgEl} preserveAspectRatio="xMidYMid meet">
 			<path class="bg" {d} />
 			<path class="fg" {d} />
 		</svg>
 
-		<div style="margin-top: 1rem; display:none; gap: .5rem;">
+		<div class="exp-buttons">
 			<button on:click={() => exportPNG('bits.png', 6)}>Export PNG</button>
 			<button on:click={() => exportStandaloneSVG('bits.svg')}>Export SVG</button>
 		</div>
@@ -145,6 +151,7 @@
 
 <style>
 	svg {
+		display: none;
 		height: 600px;
 		width: 600px;
 	}
@@ -158,6 +165,12 @@
 	.fg {
 		stroke: var(--hit-yellow);
 		stroke-width: 1.5px;
+	}
+
+	.exp-buttons {
+		margin-top: 1rem;
+		display: none;
+		gap: 0.5rem;
 	}
 
 	.container {
