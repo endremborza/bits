@@ -2,7 +2,6 @@
 	let d = 'M 20 80 Q 50 93 70 80 Q 78 50 47 20 Q 47 60 20 80 z';
 	let svgEl: SVGSVGElement;
 
-	// Normalize paint values: rgba(..., 0) → 'none'
 	function normalizePaint(v: string) {
 		if (!v) return '';
 		if (v === 'none') return 'none';
@@ -19,7 +18,6 @@
 		return Number.isFinite(n) ? String(n) : v;
 	};
 
-	// Inline computed styles from the *original* DOM SVG into a deep clone.
 	function inlineSVG(svg: SVGSVGElement): SVGSVGElement {
 		// Deep clone first (structure & attributes are preserved)
 		const clone = svg.cloneNode(true) as SVGSVGElement;
@@ -129,16 +127,20 @@
 	}
 </script>
 
-<h1>Bits</h1>
+<div class="container">
+	<div class="content padded">
+		<h1>Bits</h1>
 
-<svg viewBox="0 0 100 100" bind:this={svgEl} preserveAspectRatio="xMidYMid meet">
-	<path class="bg" {d} />
-	<path class="fg" {d} />
-</svg>
+		<svg viewBox="0 0 100 100" bind:this={svgEl} preserveAspectRatio="xMidYMid meet">
+			<path class="bg" {d} />
+			<path class="fg" {d} />
+		</svg>
 
-<div style="margin-top: 1rem; display:none; gap: .5rem;">
-	<button on:click={() => exportPNG('bits.png', 6)}>Export PNG</button>
-	<button on:click={() => exportStandaloneSVG('bits.svg')}>Export SVG</button>
+		<div style="margin-top: 1rem; display:none; gap: .5rem;">
+			<button on:click={() => exportPNG('bits.png', 6)}>Export PNG</button>
+			<button on:click={() => exportStandaloneSVG('bits.svg')}>Export SVG</button>
+		</div>
+	</div>
 </div>
 
 <style>
@@ -156,5 +158,13 @@
 	.fg {
 		stroke: var(--hit-yellow);
 		stroke-width: 1.5px;
+	}
+
+	.container {
+		display: flex;
+		justify-content: center;
+	}
+	.content {
+		max-width: 800px;
 	}
 </style>
