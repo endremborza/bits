@@ -776,7 +776,7 @@
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 		color: #94a3b8;
-		width: 60px;
+		white-space: nowrap;
 		flex-shrink: 0;
 	}
 
@@ -909,6 +909,8 @@
 		align-items: center;
 		gap: 4px;
 		flex-wrap: wrap;
+		flex-shrink: 1;
+		min-width: 0;
 	}
 
 	.pill {
