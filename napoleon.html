@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link href="./_app/immutable/entry/start.CCijdsB8.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/BrkXZ3_3.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/DVzfxHfo.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/lNaeB2T-.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/Dn7EAdYd.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/vF4GmVxT.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/BWkX62_v.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/eBpzNA_n.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/RhonRDj0.js" rel="modulepreload">
+		<link href="./_app/immutable/entry/app.BxqmtzCE.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/CWj6FrbW.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/BpT-JqK8.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/B7XTkkw_.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/C_8MCF1e.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/CUJcYAEe.js" rel="modulepreload">
+		<link href="./_app/immutable/nodes/0.DzLNIGM-.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/IDefmxm5.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/zJXdzbmA.js" rel="modulepreload">
+		<link href="./_app/immutable/nodes/12.D_CW0jdx.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/DtS_EBHv.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/u6a_GZX4.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/BRzKQYUk.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/B9crybYB.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/BTNYpkh9.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/D-TTNC6H.js" rel="modulepreload">
+		<!--[--><meta name="description" content="Divide a circle into four equal arcs with a compass alone, written in a tiny compass language."/><!--]--><title>Napoleon's problem</title>
+		<link href="./_app/immutable/assets/0.BdQiTB8Y.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/12.DZROx7os.css" rel="stylesheet">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents"><!--[--><!--[--><!----><head><title>Bits</title></head> <!----><!--[!--><!----><main class="napoleon svelte-1g90xfi"><header class="svelte-1g90xfi"><h1 class="svelte-1g90xfi">Napoleon's problem</h1> <p class="svelte-1g90xfi">Given a circle and its center, divide the circle into four equal arcs using only a compass.</p></header> <section class="board svelte-1g90xfi"><svg viewBox="-132 -132 264 264" role="img" aria-label="compass construction" class="svelte-1mga5nn"><!--[--><circle cx="0" cy="0" r="100" pathLength="1" transform="rotate(135 0 0)" stroke-width="1.1440000000000001" class="svelte-1mga5nn given"></circle><!--]--><!--[!--><!--]--><!--[--><!--[!--><!--]--><!--]--><!--[--><circle class="point svelte-1mga5nn" cx="0" cy="0" r="1.98"></circle><text class="point-name svelte-1mga5nn" x="-4.619999999999999" y="-4.619999999999999" font-size="6.16">O</text><circle class="point svelte-1mga5nn" cx="-70.71067811865474" cy="70.71067811865474" r="1.98"></circle><text class="point-name svelte-1mga5nn" x="-75.37758287448595" y="75.37758287448595" font-size="6.16">A</text><!--]--></svg><!----></section> <aside class="svelte-1g90xfi"><textarea rows="3" spellcheck="false" autocapitalize="off" placeholder="moves, separated by spaces" aria-label="construction" class="svelte-1g90xfi"></textarea> <!--[!--><!--]--> <button class="svelte-1g90xfi">make a random valid move</button> <p class="svelte-1g90xfi"><b>O</b> is the center of the circle and <b>A</b> a point on it. Write moves separated by
+			spaces: capital letters are points, the lower case letter is the move. A circle is its center
+			followed by a point on it (<code class="svelte-1g90xfi">BO</code>) or by two points whose distance is its radius (<code class="svelte-1g90xfi">BOA</code>).</p> <table class="svelte-1g90xfi"><tbody><!--[--><tr><td class="svelte-1g90xfi"><code class="svelte-1g90xfi">BOc</code></td><td class="svelte-1g90xfi">draw the circle around B through O</td></tr><tr><td class="svelte-1g90xfi"><code class="svelte-1g90xfi">BOAc</code></td><td class="svelte-1g90xfi">draw the circle around B with radius |OA|</td></tr><tr><td class="svelte-1g90xfi"><code class="svelte-1g90xfi">OApB</code></td><td class="svelte-1g90xfi">name B any new point of circle OA</td></tr><tr><td class="svelte-1g90xfi"><code class="svelte-1g90xfi">OAxBOC</code></td><td class="svelte-1g90xfi">walk clockwise around OA from the point facing the center of BO; name C the first new point where they cross</td></tr><tr><td class="svelte-1g90xfi"><code class="svelte-1g90xfi">ABCD</code></td><td class="svelte-1g90xfi">last word: the four answer points</td></tr><!--]--></tbody></table> <p class="svelte-1g90xfi">A new name must be an unused letter, a new point must not already be named, and no circle may
+			be drawn twice.</p></aside></main><!----><!--]--><!----><!----><!--]--> <!--[!--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1d8mc7l = {
+						base: new URL(".", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("./_app/immutable/entry/start.CCijdsB8.js"),
+						import("./_app/immutable/entry/app.BxqmtzCE.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 12],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
