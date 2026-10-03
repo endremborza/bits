@@ -1,1 +1,0 @@
-import"../chunks/CWj6FrbW.js";import{f as t,c as e,g as p,r as i}from"../chunks/BnbYGRJw.js";import{s as m}from"../chunks/1zNOGqSC.js";var l=t('<div class="paper svelte-1j0lmvl"><!></div>');function c(o,a){var r=l(),s=p(r);m(s,()=>a.children),i(r),e(o,r)}export{c as component};
